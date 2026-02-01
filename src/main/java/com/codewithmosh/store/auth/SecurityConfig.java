@@ -1,6 +1,8 @@
 package com.codewithmosh.store.auth;
 
 import com.codewithmosh.store.common.SecurityRules;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.servers.Server;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -52,10 +54,19 @@ public class SecurityConfig {
     }
 
     @Bean
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI()
+                .servers(List.of(
+                        new Server().url("https://store-api-production-c210.up.railway.app")
+                ));
+    }
+
+
+    @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://store-api-production-c210.up.railway.app");
+        config.addAllowedOrigin("https://store-api-production-c210.up.railway.app");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 
