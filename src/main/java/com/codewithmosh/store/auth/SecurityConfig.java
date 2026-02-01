@@ -55,10 +55,10 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOriginPattern("*");
+        config.addAllowedOrigin("https://store-api-production-c210.up.railway.app");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
-        config.addAllowedOrigin("https://store-api-production-c210.up.railway.app");
+
 
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
