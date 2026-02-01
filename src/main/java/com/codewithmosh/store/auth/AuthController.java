@@ -45,7 +45,6 @@ public class AuthController {
     public ResponseEntity<JwtResponse> refresh(
             @CookieValue(value = "refreshToken") String refreshToken
     ) {
-        //System.out.println("AT REFRESH ENDPOINT");
         return ResponseEntity.ok(authService.refresh(refreshToken));
     }
 

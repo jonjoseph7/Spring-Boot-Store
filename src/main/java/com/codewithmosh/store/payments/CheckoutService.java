@@ -45,7 +45,6 @@ public class CheckoutService {
             return new CheckoutResponse(order.getId(), session.getCheckoutUrl());
         }
         catch (PaymentException e) {
-            //System.out.println(e.getMessage());
             orderRepository.delete(order);
             throw e;
         }

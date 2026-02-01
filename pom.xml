@@ -132,12 +132,11 @@
             <artifactId>stripe-java</artifactId>
             <version>31.2.0</version>
         </dependency>
-
-        <!--dependency>
+        <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.8.15</version>
-        </dependency-->
+            <version>2.8.5</version>
+        </dependency>
 
     </dependencies>
     <build>
@@ -168,7 +167,8 @@
                 <configuration>
                     <url>jdbc:mysql://localhost:3306/store_api?createDatabaseIfNotExist=true</url>
                     <user>root</user>
-                    <password>Manman755_</password>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <password>${env.MYSQL_ROOT_PASSWORD}</password>
                     <cleanDisabled>false</cleanDisabled>
                 </configuration>
             </plugin>
